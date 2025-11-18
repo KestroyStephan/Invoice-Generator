@@ -22,34 +22,6 @@ Styling: Tailwind CSS
 
 Icons: Lucide React
 
-🚀 Getting Started
-
-Prerequisites
-
-Ensure you have Node.js installed on your machine.
-
-Installation
-
-Clone the repository
-
-git clone [https://github.com/YOUR_USERNAME/invoice-app.git](https://github.com/YOUR_USERNAME/invoice-app.git)
-
-
-Navigate to the project folder
-
-cd invoice-app
-
-
-Install dependencies
-
-npm install
-
-
-Start the development server
-
-npm run dev
-
-
 📸 How to Use
 
 Open the app in your browser (usually http://localhost:5173).
