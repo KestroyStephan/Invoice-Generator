@@ -48,19 +48,17 @@ export default function App() {
   const [date, setDate] = useState(new Date().toISOString().substr(0, 10));
   
   // Sender Details
-  const [companyName, setCompanyName] = useState('Pool Table Services');
-  const [companyAddress, setCompanyAddress] = useState('123 Main Street, Colombo');
+  const [companyName, setCompanyName] = useState('Pool Table Reparing & Services');
+  const [companyAddress, setCompanyAddress] = useState('131 De Fonseka Rd,\nColombo 00500');
   
-  // Client Details
-  const [clientName, setClientName] = useState('Mr. Kamal Perera');
-  const [clientAddress, setClientAddress] = useState('31 De Fonseka Rd,\nColombo 00500');
   
+  // Client Details (Empty by default for new customers)
+  const [clientName, setClientName] = useState('');
+  const [clientAddress, setClientAddress] = useState('');
+
+  // Items (Starts with one empty row)
   const [items, setItems] = useState([
-    { id: 1, desc: 'Pool Ball Set - Premium', price: 25000, qty: 1 },
-    { id: 2, desc: 'Triangle Rack (Standard)', price: 3500, qty: 1 },
-    { id: 3, desc: 'Table Brush', price: 3500, qty: 1 },
-    { id: 4, desc: 'Chalk Box (Blue)', price: 300, qty: 5 },
-    { id: 5, desc: 'Cue Repair Service', price: 1000, qty: 5 },
+    { id: Date.now(), desc: '', price: 0, qty: 1 },
   ]);
 
   // -- Theme Colors --
@@ -156,7 +154,7 @@ export default function App() {
         <div className="bg-white border-b border-gray-200 p-6 sticky top-0 z-10 shadow-sm">
             <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
                 <PenTool className="w-5 h-5 text-gray-500" /> 
-                Document Creator
+                Creater studios 
             </h2>
             <p className="text-gray-400 text-xs mt-1">Customize your document details below</p>
             
