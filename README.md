@@ -1,16 +1,149 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-----
 
-Currently, two official plugins are available:
+# 🧾 Invoicify - Smart Invoice Generator
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Invoicify** is a sleek, professional web-based invoice generation tool designed for freelancers and small businesses. It simplifies billing by allowing users to create, manage, and export beautiful invoices instantly, wrapped in a clean "Professional Glass" interface.
 
-## React Compiler
+-----
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
 
-## Expanding the ESLint configuration
+  * **⚡ Instant Invoice Creation:** Add line items, quantities, and prices with automatic subtotal, tax, and grand total calculations.
+  * **📄 PDF Export:** One-click download to generate professional PDF invoices ready to send to clients.
+  * **👥 Client Management:** Store client details (Name, Email, Address) for quick reuse in future invoices.
+  * **🎨 Dynamic UI:** A responsive, user-friendly interface featuring subtle shadows, rounded corners, and a clean color palette.
+  * **💾 History & Persistence:** Sign in to save your generated invoices and track payment statuses in the database.
+  * **📱 Fully Responsive:** Optimized for editing invoices on desktops, tablets, and mobile phones.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-----
+
+## 🛠️ Tech Stack
+
+### **Frontend**
+
+  * React.js (Create React App)
+  * Tailwind CSS (Styling)
+  * Boxicons (Icons)
+  * Google Fonts (Inter)
+
+### **Backend**
+
+  * Node.js & Express.js
+  * MongoDB & Mongoose (Data Persistence)
+  * JWT (JSON Web Tokens for Auth)
+
+### **Libraries Used**
+
+  * **jspdf:** For converting the DOM elements into downloadable PDF files.
+  * **html2canvas:** To render the invoice layout as an image for the PDF.
+  * **Axios:** For handling HTTP requests between client and server.
+
+-----
+
+## ⚙️ Prerequisites
+
+Before running the project, ensure you have the following installed:
+
+1.  **Node.js** (v14 or higher)
+2.  **MongoDB** (Running locally or using a MongoDB Atlas connection string)
+
+-----
+
+## 📥 Installation & Setup
+
+### 1\. Clone the Repository
+
+```bash
+git clone https://github.com/stephankestroy/Invoice-Generator.git
+cd Invoice-Generator
+```
+
+### 2\. Setup the Backend
+
+Navigate to the root directory (where `server.js` is located).
+
+1.  **Install Dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+2.  **Create a .env file:**
+    Create a file named `.env` in the root folder and add the following keys:
+
+    ```env
+    PORT=5000
+    MONGODB_URI=mongodb://127.0.0.1:27017/invoicify_db
+    JWT_SECRET=your_jwt_secret_key
+    ```
+
+3.  **Start the Server:**
+
+    ```bash
+    npm start
+    ```
+
+    *You should see: 🚀 Server running at http://localhost:5000*
+
+### 3\. Setup the Frontend
+
+Navigate to the client folder.
+
+1.  **Go to Client Directory:**
+
+    ```bash
+    cd client
+    ```
+
+2.  **Install Dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Start React App:**
+
+    ```bash
+    npm start
+    ```
+
+4.  **Open in Browser:**
+    Go to `http://localhost:3000`
+
+-----
+
+## 📂 Project Structure
+
+```text
+Invoice-Generator/
+│
+├── client/                 # React Frontend
+│   ├── src/
+│   │   ├── components/     # InvoiceForm, Preview, Dashboard
+│   │   ├── pages/          # Home, History, Login
+│   │   ├── App.js          # Main Component
+│   │   └── index.css       # Tailwind Imports
+│   └── package.json        # Frontend Dependencies
+│
+├── models/                 # Mongoose Models
+│   ├── Invoice.js          # Schema for saved invoices
+│   └── User.js             # Schema for user auth
+│
+├── routes/                 # API Routes
+│   ├── invoiceRoutes.js    # CRUD for invoices
+│   └── authRoutes.js       # Login/Register logic
+│
+├── server.js               # Main Backend Server
+├── package.json            # Backend Dependencies
+└── README.md               # Project Documentation
+```
+
+-----
+
+## 🔮 Future Improvements
+
+  - [ ] Add support for multiple currencies.
+  - [ ] Implement "Send via Email" feature directly from the dashboard.
+  - [ ] Add recurring invoice templates.
+  - [ ] Integration with payment gateways (Stripe/PayPal).
